@@ -45,3 +45,7 @@ Route::post('/admin/testimoni', [TestimoniController::class, 'store']);
 Route::get('/admin/testimoni/{testimoni}/edit', [TestimoniController::class, 'edit']);
 Route::post('/admin/testimoni/{testimoni}', [TestimoniController::class, 'update']);
 Route::post('/admin/testimoni/{testimoni}/delete', [TestimoniController::class, 'destroy']);
+
+// Competition And Event
+// Competition 
+Route::get('/admin/competitionevent/competition', [App\Http\Controllers\CompetitionController::class, 'competitionAdmin']);
