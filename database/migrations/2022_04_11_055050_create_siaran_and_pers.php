@@ -16,7 +16,7 @@ class CreateSiaranAndPers extends Migration
         Schema::create('siaranandpers', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('subjudul');
+            $table->string('ringkasan');
             $table->string('gambar');
             $table->longText('artikel');
             $table->timestamps();
