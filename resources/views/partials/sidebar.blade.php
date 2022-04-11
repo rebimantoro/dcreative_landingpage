@@ -35,13 +35,13 @@
                 </li>
 
                 <li class="@yield('competition')">
-                    <a href="/admin/competitionevent/competition">
+                    <a href="/admin/competition">
                         <i class="fa fa-trophy" aria-hidden="true"></i>
                         <p>Competition</p>
                     </a>
                 </li>
                 <li class="@yield('events')">
-                    <a href="/admin/competitionevent/event">
+                    <a href="/admin/event">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                         <p>Events</p>
                     </a>
