@@ -19,6 +19,7 @@ active
                         <th scope="col">Dimulai</th>
                         <th scope="col">Selesai</th>
                         <th scope="col">Keterangan</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
