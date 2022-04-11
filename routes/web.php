@@ -7,6 +7,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\SiaranAndPersController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -67,3 +68,12 @@ Route::post('/admin/event', [EventController::class, 'store']);
 Route::get('/admin/event/{event}/edit', [EventController::class, 'edit']);
 Route::post('/admin/event/{competition}', [EventController::class, 'update']);
 Route::post('/admin/event/{event}/delete', [EventController::class, 'destroy']);
+
+// Siaran And Pers
+Route::get('/admin/siaran', [SiaranAndPersController::class, 'siaranPersAdmin']);
+Route::get('/admin/siaran/create', [SiaranAndPersController::class, 'create']);
+Route::post('/admin/siaran', [SiaranAndPersController::class, 'store']);
+Route::get('/admin/siaran/{siaran}/edit', [SiaranAndPersController::class, 'edit']);
+Route::post('/admin/siaran/{siaran}', [SiaranAndPersController::class, 'update']);
+Route::post('/admin/siaran/{siaran}/delete',[SiaranAndPersController::class, 'destroy']);
+Route::get('admin/siaran/{siaran}', [SiaranAndPersController::class, 'detail']);
