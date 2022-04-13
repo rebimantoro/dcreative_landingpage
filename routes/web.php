@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\CompetitionController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\SiaranAndPersController;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +27,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/home', [HomeController::class, 'index'])->name('home');
 
 //Layanan
 Route::get('/admin/layanan', [LayananController::class, 'layananAdmin']);
@@ -45,3 +50,30 @@ Route::post('/admin/testimoni', [TestimoniController::class, 'store']);
 Route::get('/admin/testimoni/{testimoni}/edit', [TestimoniController::class, 'edit']);
 Route::post('/admin/testimoni/{testimoni}', [TestimoniController::class, 'update']);
 Route::post('/admin/testimoni/{testimoni}/delete', [TestimoniController::class, 'destroy']);
+
+// Competition And Event
+// Competition 
+Route::get('/admin/competition', [CompetitionController::class, 'competitionAdmin']);
+Route::get('/admin/competition/create', [CompetitionController::class, 'create']);
+Route::post('/admin/competition', [CompetitionController::class, 'store']);
+Route::get('/admin/competition/{competition}/edit', [CompetitionController::class, 'edit']);
+Route::post('/admin/competition/{competition}', [CompetitionController::class, 'update']);
+Route::post('/admin/competition/{competition}/delete', [CompetitionController::class, 'destroy']);
+
+
+// Event
+Route::get('/admin/event', [EventController::class, 'eventAdmin']);
+Route::get('/admin/event/create', [EventController::class, 'create']);
+Route::post('/admin/event', [EventController::class, 'store']);
+Route::get('/admin/event/{event}/edit', [EventController::class, 'edit']);
+Route::post('/admin/event/{competition}', [EventController::class, 'update']);
+Route::post('/admin/event/{event}/delete', [EventController::class, 'destroy']);
+
+// Siaran And Pers
+Route::get('/admin/siaran', [SiaranAndPersController::class, 'siaranPersAdmin']);
+Route::get('/admin/siaran/create', [SiaranAndPersController::class, 'create']);
+Route::post('/admin/siaran', [SiaranAndPersController::class, 'store']);
+Route::get('/admin/siaran/{siaran}/edit', [SiaranAndPersController::class, 'edit']);
+Route::post('/admin/siaran/{siaran}', [SiaranAndPersController::class, 'update']);
+Route::post('/admin/siaran/{siaran}/delete',[SiaranAndPersController::class, 'destroy']);
+Route::get('admin/siaran/{siaran}', [SiaranAndPersController::class, 'detail']);
